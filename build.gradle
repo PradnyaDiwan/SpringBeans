@@ -15,6 +15,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.assertj:assertj-core-java8:1.0.0m1'
 }
 
 tasks.named('test') {

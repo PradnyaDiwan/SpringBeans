@@ -9,14 +9,9 @@ import java.time.LocalDate;
 @Component
 public class NormalCitizenScheme {
    private final float interest_rate = 4.0f;
-   public void printNormalCitizenInterest(long balance, long account_no, int age) {
+   public double printNormalCitizenInterest(long balance, long account_no, int age) {
        float interest = (balance*1*interest_rate)/100.0f;
-       StandardEvaluationContext evaluationContext = new StandardEvaluationContext();
-       evaluationContext.setVariable("interest",interest);
-       evaluationContext.setVariable("acc_no",account_no);
-       evaluationContext.setVariable("age",age);
-       String exp = (String) new SpelExpressionParser()
-                    .parseExpression("'components.User with Account Number : ' + #acc_no + ' has age of ' + #age + ', So will get Interest of Rs. ' + #interest").getValue(evaluationContext);
-       System.out.println(exp);
+       System.out.println("User with Account Number: "+ account_no+" has age"+age+" So will get Interest of Rs."+interest);
+       return interest;
    }
 }
